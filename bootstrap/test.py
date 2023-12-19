@@ -24,7 +24,8 @@ sys.meta_path.insert(0, TestFinder(sys.meta_path))
 
 from numba import cuda  # noqa: E402, F401
 
-cuda.test()
+if __name__ == '__main__':
+    cuda.test()
 
 
 # Need to ensure that all CUDA modules are imported from this package at this
