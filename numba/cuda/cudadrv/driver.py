@@ -35,7 +35,7 @@ from numba.core import utils, serialize, config
 from .error import CudaSupportError, CudaDriverError
 from .drvapi import API_PROTOTYPES
 from .drvapi import cu_occupancy_b2d_size, cu_stream_callback_pyobj, cu_uuid
-from numba.cuda.cudadrv import enums, drvapi, nvrtc, _extras
+from numba.cuda.cudadrv import enums, drvapi, nvrtc
 
 USE_NV_BINDING = config.CUDA_USE_NVIDIA_BINDING
 
@@ -266,21 +266,10 @@ class Driver(object):
             # The extras are only needed when using Numba's ctypes bindings
             return
 
-        # set pointer to original cuIpcOpenMemHandle
-        set_proto = ctypes.CFUNCTYPE(None, c_void_p)
-        set_cuIpcOpenMemHandle = set_proto(_extras.set_cuIpcOpenMemHandle)
-        set_cuIpcOpenMemHandle(self._find_api('cuIpcOpenMemHandle'))
-        # bind caller to cuIpcOpenMemHandle that fixes the ABI
-        call_proto = ctypes.CFUNCTYPE(c_int,
-                                      ctypes.POINTER(drvapi.cu_device_ptr),
-                                      ctypes.POINTER(drvapi.cu_ipc_mem_handle),
-                                      ctypes.c_uint)
-        call_cuIpcOpenMemHandle = call_proto(_extras.call_cuIpcOpenMemHandle)
-        call_cuIpcOpenMemHandle.__name__ = 'call_cuIpcOpenMemHandle'
-        safe_call = self._ctypes_wrap_fn('call_cuIpcOpenMemHandle',
-                                         call_cuIpcOpenMemHandle)
-        # override cuIpcOpenMemHandle
-        self.cuIpcOpenMemHandle = safe_call
+        def unimplemented_extra(*args, **kwargs):
+            raise NotImplementedError("_extras unimplemented")
+
+        self.cuIpcOpenMemHandle = unimplemented_extra
 
     @property
     def is_available(self):
