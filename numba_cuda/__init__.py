@@ -3,7 +3,7 @@ import importlib
 import importlib.abc
 
 NUMBA_LOCATION = "/home/gmarkall/numbadev/numba"
-NUMBA_CUDA_LOCATION = "/home/gmarkall/numbadev/numba_cuda"
+NUMBA_CUDA_LOCATION = "/home/gmarkall/numbadev/numba_cuda/numba_cuda"
 
 
 class TestFinder(importlib.abc.MetaPathFinder):
@@ -20,13 +20,6 @@ class TestFinder(importlib.abc.MetaPathFinder):
                     return spec
 
 
-sys.meta_path.insert(0, TestFinder(sys.meta_path))
-
-from numba import cuda  # noqa: E402, F401
-
-if __name__ == '__main__':
-    cuda.test()
-
-
-# Need to ensure that all CUDA modules are imported from this package at this
-# point.
+def install():
+    print("Installing")
+    sys.meta_path.insert(0, TestFinder(sys.meta_path))
