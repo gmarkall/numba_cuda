@@ -13,4 +13,4 @@ def test(*args, **kwargs):
     if not is_available():
         raise cuda_error()
 
-    return runtests.main("numba.cuda.tests", *args, **kwargs)
+    return runtests._main(["numba.cuda.tests"], *args, **kwargs)
