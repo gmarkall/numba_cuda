@@ -33,3 +33,7 @@ Ran 1468 tests in 131.707s
 
 OK (skipped=20, expected failures=11)
 ```
+
+***
+
+![A small blue snake in the shadow of a large blue snake](shadow_snake.jpg)
