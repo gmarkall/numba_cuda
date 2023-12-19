@@ -17,7 +17,6 @@ def load_testsuite(loader, dir):
         suite = unittest.TestSuite()
         files = []
         for f in os.listdir(dir):
-            print(f"File: {f}")
             path = join(dir, f)
             if isfile(path) and fnmatch(f, 'test_*.py'):
                 files.append(f)

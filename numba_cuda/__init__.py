@@ -21,5 +21,4 @@ class TestFinder(importlib.abc.MetaPathFinder):
 
 
 def install():
-    print("Installing")
     sys.meta_path.insert(0, TestFinder(sys.meta_path))
