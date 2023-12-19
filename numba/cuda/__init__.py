@@ -11,6 +11,6 @@ from numba.cuda.compiler import compile_ptx, compile_ptx_for_current_device
 
 def test(*args, **kwargs):
     if not is_available():
-        raise cuda_error()
+        raise RuntimeError('CUDA is not available')
 
-    return runtests._main(["numba.cuda.tests"], *args, **kwargs)
+    return runtests._main(["<main>", "numba.cuda.tests", '-v', '-m'], *args, **kwargs)
