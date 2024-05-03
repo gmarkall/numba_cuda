@@ -12,8 +12,8 @@ from numba.core.typing import cmathdecl
 from numba.core import datamodel
 
 from .cudadrv import nvvm
-from numba.cuda import codegen, nvvmutils, ufuncs
-from numba.cuda.models import cuda_data_manager
+from numba_cuda import codegen, nvvmutils, ufuncs
+from numba_cuda.models import cuda_data_manager
 
 # -----------------------------------------------------------------------------
 # Typing
@@ -34,7 +34,7 @@ class CUDATypingContext(typing.BaseContext):
 
     def resolve_value_type(self, val):
         # treat other dispatcher object as another device function
-        from numba.cuda.dispatcher import CUDADispatcher
+        from numba_cuda.dispatcher import CUDADispatcher
         if (isinstance(val, Dispatcher) and not
                 isinstance(val, CUDADispatcher)):
             try:
@@ -88,7 +88,7 @@ class CUDATargetContext(BaseContext):
         return self._internal_codegen._create_empty_module(name)
 
     def init(self):
-        self._internal_codegen = codegen.JITCUDACodegen("numba.cuda.jit")
+        self._internal_codegen = codegen.JITCUDACodegen("numba_cuda.jit")
         self._target_data = None
 
     def load_additional_registries(self):
@@ -131,7 +131,7 @@ class CUDATargetContext(BaseContext):
         constants, because they are loaded from a special register in the PTX.
         These include threadIdx, blockDim, etc.
         """
-        from numba import cuda
+        import numba_cuda as cuda
         nonconsts = ('threadIdx', 'blockDim', 'blockIdx', 'gridDim', 'laneid',
                      'warpsize')
         nonconsts_with_mod = tuple([(types.Module(cuda), nc)

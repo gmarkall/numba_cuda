@@ -24,15 +24,15 @@ del vector_types, name, svty, alias
 # simulator's version and not the real version if the simulator is enabled.
 if config.ENABLE_CUDASIM:
     import sys
-    from numba.cuda.simulator import cudadrv
-    sys.modules['numba.cuda.cudadrv'] = cudadrv
-    sys.modules['numba.cuda.cudadrv.devicearray'] = cudadrv.devicearray
-    sys.modules['numba.cuda.cudadrv.devices'] = cudadrv.devices
-    sys.modules['numba.cuda.cudadrv.driver'] = cudadrv.driver
-    sys.modules['numba.cuda.cudadrv.runtime'] = cudadrv.runtime
-    sys.modules['numba.cuda.cudadrv.drvapi'] = cudadrv.drvapi
-    sys.modules['numba.cuda.cudadrv.error'] = cudadrv.error
-    sys.modules['numba.cuda.cudadrv.nvvm'] = cudadrv.nvvm
+    from numba_cuda.simulator import cudadrv
+    sys.modules['numba_cuda.cudadrv'] = cudadrv
+    sys.modules['numba_cuda.cudadrv.devicearray'] = cudadrv.devicearray
+    sys.modules['numba_cuda.cudadrv.devices'] = cudadrv.devices
+    sys.modules['numba_cuda.cudadrv.driver'] = cudadrv.driver
+    sys.modules['numba_cuda.cudadrv.runtime'] = cudadrv.runtime
+    sys.modules['numba_cuda.cudadrv.drvapi'] = cudadrv.drvapi
+    sys.modules['numba_cuda.cudadrv.error'] = cudadrv.error
+    sys.modules['numba_cuda.cudadrv.nvvm'] = cudadrv.nvvm
 
     from . import compiler
-    sys.modules['numba.cuda.compiler'] = compiler
+    sys.modules['numba_cuda.compiler'] = compiler

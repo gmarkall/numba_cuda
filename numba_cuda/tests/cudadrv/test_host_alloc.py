@@ -1,7 +1,7 @@
 import numpy as np
-from numba.cuda.cudadrv import driver
-from numba import cuda
-from numba.cuda.testing import unittest, ContextResettingTestCase
+from numba_cuda.cudadrv import driver
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, ContextResettingTestCase
 
 
 class TestHostAlloc(ContextResettingTestCase):

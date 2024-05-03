@@ -1,6 +1,7 @@
-from numba import cuda, float32, int32
+import numba_cuda as cuda
+from numba import float32, int32
 from numba.core.errors import NumbaInvalidConfigWarning
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 from numba.tests.support import ignore_internal_warnings
 import re
 import unittest

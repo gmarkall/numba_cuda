@@ -349,7 +349,7 @@ def ccs_supported_by_ctk(ctk_version):
 
 def get_supported_ccs():
     try:
-        from numba.cuda.cudadrv.runtime import runtime
+        from numba_cuda.cudadrv.runtime import runtime
         cudart_version = runtime.get_version()
     except: # noqa: E722
         # We can't support anything if there's an error getting the runtime

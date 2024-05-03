@@ -1,6 +1,6 @@
 import unittest
 
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 from numba.tests.support import captured_stdout
 
 
@@ -25,8 +25,8 @@ class TestMonteCarlo(CUDATestCase):
         # ex_montecarlo.import.begin
         import numba
         import numpy as np
-        from numba import cuda
-        from numba.cuda.random import (
+        import numba_cuda as cuda
+        from numba_cuda.random import (
             create_xoroshiro128p_states,
             xoroshiro128p_uniform_float32,
         )

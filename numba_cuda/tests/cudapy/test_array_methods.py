@@ -1,6 +1,6 @@
 import numpy as np
-from numba import cuda
-from numba.cuda.testing import CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.testing import CUDATestCase
 import unittest
 
 

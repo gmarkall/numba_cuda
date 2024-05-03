@@ -1,4 +1,4 @@
-from numba import cuda
+import numba_cuda as cuda
 from numpy import array as np_array
 from numba.np.ufunc import deviceufunc
 from numba.np.ufunc.deviceufunc import (UFuncMechanism, GeneralizedUFunc,

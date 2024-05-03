@@ -1,6 +1,6 @@
 import unittest
 
-from numba.cuda.testing import (CUDATestCase, skip_if_cudadevrt_missing,
+from numba_cuda.testing import (CUDATestCase, skip_if_cudadevrt_missing,
                                 skip_on_cudasim, skip_unless_cc_60,
                                 skip_if_mvc_enabled)
 from numba.tests.support import captured_stdout
@@ -34,7 +34,7 @@ class TestLaplace(CUDATestCase):
 
         # ex_laplace.import.begin
         import numpy as np
-        from numba import cuda
+        import numba_cuda as cuda
         # ex_laplace.import.end
 
         # ex_laplace.allocate.begin

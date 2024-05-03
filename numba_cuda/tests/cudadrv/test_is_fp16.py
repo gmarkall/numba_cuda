@@ -1,5 +1,5 @@
-from numba import cuda
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim, skip_unless_cc_53
+import numba_cuda as cuda
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim, skip_unless_cc_53
 
 
 class TestIsFP16Supported(CUDATestCase):

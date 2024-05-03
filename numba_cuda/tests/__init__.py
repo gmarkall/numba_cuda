@@ -1,7 +1,7 @@
 from fnmatch import fnmatch
-from numba.cuda.testing import ensure_supported_ccs_initialized
+from numba_cuda.testing import ensure_supported_ccs_initialized
 from numba.testing import unittest
-from numba import cuda
+import numba_cuda as cuda
 from os.path import dirname, isfile, join, normpath, relpath, splitext
 
 import os
@@ -27,7 +27,7 @@ def load_testsuite(loader, dir):
             # translate it to a module name. This differs from the
             # implementation in Numba, because the toplevel dir is the
             # numba_cuda module location, not the numba one.
-            top_level_dir = dirname(dirname(dirname(dirname(__file__))))
+            top_level_dir = dirname(dirname(dirname(__file__)))
             f = relpath(join(dir, f), top_level_dir)
             f = splitext(normpath(f.replace(os.path.sep, '.')))[0]
             suite.addTests(loader.loadTestsFromName(f))

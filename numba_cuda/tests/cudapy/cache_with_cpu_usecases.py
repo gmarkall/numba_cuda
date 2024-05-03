@@ -1,8 +1,9 @@
 import sys
 
-from numba import cuda, njit
-from numba.cuda.testing import CUDATestCase
-from numba.cuda.tests.cudapy.cache_usecases import CUDAUseCase, UseCase
+import numba_cuda as cuda
+from numba import njit
+from numba_cuda.testing import CUDATestCase
+from numba_cuda.tests.cudapy.cache_usecases import CUDAUseCase, UseCase
 
 
 class CPUUseCase(UseCase):

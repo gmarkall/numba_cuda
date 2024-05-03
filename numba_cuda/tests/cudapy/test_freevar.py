@@ -1,7 +1,7 @@
 import numpy as np
 
-from numba import cuda
-from numba.cuda.testing import unittest, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, CUDATestCase
 
 
 class TestFreeVar(CUDATestCase):

@@ -1,7 +1,8 @@
 import numpy as np
 from numba import vectorize
-from numba import cuda, float64
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+import numba_cuda as cuda
+from numba import float64
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 import unittest
 
 sig = [float64(float64, float64)]

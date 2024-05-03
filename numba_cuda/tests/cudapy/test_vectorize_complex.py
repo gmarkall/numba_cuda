@@ -1,6 +1,6 @@
 import numpy as np
 from numba import vectorize
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 import unittest
 
 

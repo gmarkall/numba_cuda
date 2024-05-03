@@ -2,9 +2,9 @@ import numbers
 from ctypes import byref
 import weakref
 
-from numba import cuda
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
-from numba.cuda.cudadrv import driver
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+from numba_cuda.cudadrv import driver
 
 
 class TestContextStack(CUDATestCase):
@@ -127,7 +127,7 @@ class Test3rdPartyContext(CUDATestCase):
 
     def test_cudajit_in_attached_primary_context(self):
         def do():
-            from numba import cuda
+            import numba_cuda as cuda
 
             @cuda.jit
             def foo(a):

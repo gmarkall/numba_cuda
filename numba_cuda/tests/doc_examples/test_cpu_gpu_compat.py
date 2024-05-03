@@ -1,6 +1,6 @@
 import unittest
 
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 from numba.tests.support import captured_stdout
 import numpy as np
 
@@ -27,7 +27,7 @@ class TestCpuGpuCompat(CUDATestCase):
         from math import pi
 
         import numba
-        from numba import cuda
+        import numba_cuda as cuda
         # ex_cpu_gpu_compat.import.end
 
         # ex_cpu_gpu_compat.allocate.begin

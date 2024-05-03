@@ -3,9 +3,9 @@ import itertools
 
 import numpy as np
 
-from numba.cuda.testing import unittest, CUDATestCase
+from numba_cuda.testing import unittest, CUDATestCase
 from numba.core import types
-from numba import cuda
+import numba_cuda as cuda
 from numba.tests.complex_usecases import (real_usecase, imag_usecase,
                                           conjugate_usecase, phase_usecase,
                                           polar_as_complex_usecase,

@@ -1,10 +1,11 @@
 import numpy as np
 
 from numba.core.utils import PYVERSION
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 from numba.tests.support import (override_config, captured_stderr,
                                  captured_stdout)
-from numba import cuda, float64
+import numba_cuda as cuda
+from numba import float64
 import unittest
 
 

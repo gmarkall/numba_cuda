@@ -9,14 +9,14 @@ corresponding vector type from `cuda` module in kernel to use them.
 import numpy as np
 
 from numba.core import config
-from numba.cuda.testing import CUDATestCase
+from numba_cuda.testing import CUDATestCase
 
-from numba import cuda
+import numba_cuda as cuda
 
 if config.ENABLE_CUDASIM:
-    from numba.cuda.simulator.vector_types import vector_types
+    from numba_cuda.simulator.vector_types import vector_types
 else:
-    from numba.cuda.vector_types import vector_types
+    from numba_cuda.vector_types import vector_types
 
 
 def make_kernel(vtype):

@@ -479,7 +479,7 @@ class FakeCUDAModule(object):
 
 @contextmanager
 def swapped_cuda_module(fn, fake_cuda_module):
-    from numba import cuda
+    import numba_cuda as cuda
 
     fn_globs = fn.__globals__
     # get all globals that is the "cuda" module

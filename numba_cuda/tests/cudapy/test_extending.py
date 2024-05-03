@@ -1,7 +1,8 @@
-from numba.cuda.testing import skip_on_cudasim, unittest, CUDATestCase
+from numba_cuda.testing import skip_on_cudasim, unittest, CUDATestCase
 
 import numpy as np
-from numba import config, cuda, njit, types
+import numba_cuda as cuda
+from numba import config, njit, types
 
 
 class Interval:
@@ -36,8 +37,8 @@ if not config.ENABLE_CUDASIM:
                                       models, register_model, type_callable,
                                       typeof_impl)
     from numba.core.typing.templates import AttributeTemplate
-    from numba.cuda.cudadecl import registry as cuda_registry
-    from numba.cuda.cudaimpl import lower_attr as cuda_lower_attr
+    from numba_cuda.cudadecl import registry as cuda_registry
+    from numba_cuda.cudaimpl import lower_attr as cuda_lower_attr
 
     class IntervalType(types.Type):
         def __init__(self):

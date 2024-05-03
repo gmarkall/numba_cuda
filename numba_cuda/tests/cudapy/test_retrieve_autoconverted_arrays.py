@@ -1,8 +1,8 @@
 import numpy as np
 
-from numba import cuda
-from numba.cuda.args import wrap_arg
-from numba.cuda.testing import CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.args import wrap_arg
+from numba_cuda.testing import CUDATestCase
 import unittest
 
 

@@ -1,9 +1,9 @@
 import numpy as np
-from numba.cuda.testing import (unittest, CUDATestCase, skip_unless_cc_53,
+from numba_cuda.testing import (unittest, CUDATestCase, skip_unless_cc_53,
                                 skip_on_cudasim)
-from numba import cuda
+import numba_cuda as cuda
 from numba.core.types import f2, b1
-from numba.cuda import compile_ptx
+from numba_cuda import compile_ptx
 import operator
 import itertools
 from numba.np.numpy_support import from_dtype

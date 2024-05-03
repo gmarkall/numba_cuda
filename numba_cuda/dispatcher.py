@@ -11,17 +11,17 @@ from numba.core.dispatcher import Dispatcher
 from numba.core.errors import NumbaPerformanceWarning
 from numba.core.typing.typeof import Purpose, typeof
 
-from numba.cuda.api import get_current_device
-from numba.cuda.args import wrap_arg
-from numba.cuda.compiler import compile_cuda, CUDACompiler
-from numba.cuda.cudadrv import driver
-from numba.cuda.cudadrv.devices import get_context
-from numba.cuda.descriptor import cuda_target
-from numba.cuda.errors import (missing_launch_config_msg,
+from numba_cuda.api import get_current_device
+from numba_cuda.args import wrap_arg
+from numba_cuda.compiler import compile_cuda, CUDACompiler
+from numba_cuda.cudadrv import driver
+from numba_cuda.cudadrv.devices import get_context
+from numba_cuda.descriptor import cuda_target
+from numba_cuda.errors import (missing_launch_config_msg,
                                normalize_kernel_dimensions)
-from numba.cuda import types as cuda_types
+from numba_cuda import types as cuda_types
 
-from numba import cuda
+import numba_cuda as cuda
 from numba import _dispatcher
 
 from warnings import warn
@@ -581,7 +581,7 @@ class CUDADispatcher(Dispatcher, serialize.ReduceMixin):
     associated with the current context.
 
     Dispatcher objects are not to be constructed by the user, but instead are
-    created using the :func:`numba.cuda.jit` decorator.
+    created using the :func:`numba_cuda.jit` decorator.
     '''
 
     # Whether to fold named arguments and default values. Default values are

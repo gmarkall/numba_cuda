@@ -1018,7 +1018,7 @@ def create_signature(retty, args):
 #
 # Stubs can be regenerated (e.g. if the functions dict above is modified) with:
 #
-# python -c "from numba.cuda.libdevicefuncs import generate_stubs; \
+# python -c "from numba_cuda.libdevicefuncs import generate_stubs; \
 #            generate_stubs()" > numba/cuda/libdevice.py
 
 docstring_template = """

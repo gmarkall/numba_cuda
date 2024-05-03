@@ -1,9 +1,9 @@
 import numpy as np
 from numba.core import types
-from numba.cuda.testing import skip_on_cudasim, unittest, CUDATestCase
-from numba import cuda
-from numba.cuda import libdevice, compile_ptx
-from numba.cuda.libdevicefuncs import functions, create_signature
+from numba_cuda.testing import skip_on_cudasim, unittest, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda import libdevice, compile_ptx
+from numba_cuda.libdevicefuncs import functions, create_signature
 
 
 def use_sincos(s, c, x):
@@ -86,7 +86,7 @@ class TestLibdevice(CUDATestCase):
 # implementation that only contains the ret instruction - this may hide certain
 # errors.
 function_template = """\
-from numba.cuda import libdevice
+from numba_cuda import libdevice
 
 def pyfunc(%(pyargs)s):
     ret = libdevice.%(func)s(%(funcargs)s)

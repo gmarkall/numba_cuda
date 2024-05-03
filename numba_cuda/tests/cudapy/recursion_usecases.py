@@ -5,7 +5,7 @@ numba/tests/recursion_usecases.py.
 Some functions are compiled at import time, hence a separate module.
 """
 
-from numba import cuda
+import numba_cuda as cuda
 
 
 @cuda.jit("i8(i8)", device=True)

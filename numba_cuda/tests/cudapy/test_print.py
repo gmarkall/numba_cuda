@@ -1,11 +1,11 @@
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 import subprocess
 import sys
 import unittest
 
 
 cuhello_usecase = """\
-from numba import cuda
+import numba_cuda as cuda
 
 @cuda.jit
 def cuhello():
@@ -19,7 +19,7 @@ cuda.synchronize()
 
 
 printfloat_usecase = """\
-from numba import cuda
+import numba_cuda as cuda
 
 @cuda.jit
 def printfloat():
@@ -32,7 +32,7 @@ cuda.synchronize()
 
 
 printstring_usecase = """\
-from numba import cuda
+import numba_cuda as cuda
 
 @cuda.jit
 def printstring():
@@ -44,7 +44,7 @@ cuda.synchronize()
 """
 
 printempty_usecase = """\
-from numba import cuda
+import numba_cuda as cuda
 
 @cuda.jit
 def printempty():
@@ -56,7 +56,7 @@ cuda.synchronize()
 
 
 print_too_many_usecase = """\
-from numba import cuda
+import numba_cuda as cuda
 import numpy as np
 
 @cuda.jit

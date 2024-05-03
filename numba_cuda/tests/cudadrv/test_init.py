@@ -1,10 +1,10 @@
 import multiprocessing as mp
 import os
 
-from numba import cuda
-from numba.cuda.cudadrv.driver import CudaAPIError, driver
-from numba.cuda.cudadrv.error import CudaSupportError
-from numba.cuda.testing import skip_on_cudasim, unittest, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.cudadrv.driver import CudaAPIError, driver
+from numba_cuda.cudadrv.error import CudaSupportError
+from numba_cuda.testing import skip_on_cudasim, unittest, CUDATestCase
 
 
 # A mock of cuInit that always raises a CudaAPIError

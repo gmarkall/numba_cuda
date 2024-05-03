@@ -1,6 +1,6 @@
 import unittest
 
-from numba.cuda.testing import (CUDATestCase, skip_if_cudadevrt_missing,
+from numba_cuda.testing import (CUDATestCase, skip_if_cudadevrt_missing,
                                 skip_on_cudasim, skip_unless_cc_60,
                                 skip_if_mvc_enabled)
 from numba.tests.support import captured_stdout
@@ -29,7 +29,7 @@ class TestSessionization(CUDATestCase):
     def test_ex_sessionize(self):
         # ex_sessionize.import.begin
         import numpy as np
-        from numba import cuda
+        import numba_cuda as cuda
 
         # Set the timeout to one hour
         session_timeout = np.int64(np.timedelta64("3600", "s"))

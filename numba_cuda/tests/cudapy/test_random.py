@@ -2,11 +2,11 @@ import math
 
 import numpy as np
 
-from numba import cuda
-from numba.cuda.testing import unittest
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.testing import unittest
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 
-from numba.cuda.random import \
+from numba_cuda.random import \
     xoroshiro128p_uniform_float32, xoroshiro128p_normal_float32, \
     xoroshiro128p_uniform_float64, xoroshiro128p_normal_float64
 

@@ -1,9 +1,10 @@
 import numpy as np
 
 from io import StringIO
-from numba import cuda, float32, float64, int32, intp
-from numba.cuda.testing import unittest, CUDATestCase
-from numba.cuda.testing import (skip_on_cudasim, skip_with_nvdisasm,
+import numba_cuda as cuda
+from numba import float32, float64, int32, intp
+from numba_cuda.testing import unittest, CUDATestCase
+from numba_cuda.testing import (skip_on_cudasim, skip_with_nvdisasm,
                                 skip_without_nvdisasm)
 
 

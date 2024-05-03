@@ -2,8 +2,8 @@ from contextlib import contextmanager
 
 import numpy as np
 
-from numba import cuda
-from numba.cuda.testing import (unittest, skip_on_cudasim,
+import numba_cuda as cuda
+from numba_cuda.testing import (unittest, skip_on_cudasim,
                                 skip_if_external_memmgr, CUDATestCase)
 from numba.tests.support import captured_stderr
 from numba.core import config

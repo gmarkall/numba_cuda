@@ -1,7 +1,8 @@
 import numpy as np
 import math
-from numba import cuda, double, void
-from numba.cuda.testing import unittest, CUDATestCase
+import numba_cuda as cuda
+from numba import double, void
+from numba_cuda.testing import unittest, CUDATestCase
 
 
 RISKFREE = 0.02

@@ -2,9 +2,9 @@ import threading
 
 import numpy as np
 
-from numba import cuda
-from numba.cuda.testing import CUDATestCase, skip_unless_cudasim
-import numba.cuda.simulator as simulator
+import numba_cuda as cuda
+from numba_cuda.testing import CUDATestCase, skip_unless_cudasim
+import numba_cuda.simulator as simulator
 import unittest
 
 
@@ -48,7 +48,7 @@ class TestCudaSimIssues(CUDATestCase):
         When the `cuda` module is referenced in a device function,
         it does not have the kernel API (e.g. cuda.threadIdx, cuda.shared)
         """
-        from numba.cuda.tests.cudasim import support
+        from numba_cuda.tests.cudasim import support
 
         inner = support.cuda_module_in_device_function
 

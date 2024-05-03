@@ -1,7 +1,8 @@
 import math
 
-from numba import (config, cuda, float32, float64, uint32, int64, uint64,
-                   from_dtype, jit)
+import numba_cuda as cuda
+from numba import (config, float32, float64, uint32, int64, uint64, from_dtype,
+                   jit)
 
 import numpy as np
 

@@ -1,6 +1,6 @@
 import numpy as np
-from numba import cuda
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 from numba.tests.support import linux_only, override_config
 from numba.core.errors import NumbaPerformanceWarning
 import warnings

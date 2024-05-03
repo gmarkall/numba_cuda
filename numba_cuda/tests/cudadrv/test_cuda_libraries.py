@@ -1,5 +1,5 @@
-from numba.cuda.testing import unittest
-from numba.cuda.testing import skip_on_cudasim, skip_unless_conda_cudatoolkit
+from numba_cuda.testing import unittest
+from numba_cuda.testing import skip_on_cudasim, skip_unless_conda_cudatoolkit
 from numba.misc.findlib import find_lib
 
 

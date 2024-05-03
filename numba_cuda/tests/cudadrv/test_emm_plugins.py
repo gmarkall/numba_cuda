@@ -2,9 +2,9 @@ import ctypes
 import numpy as np
 import weakref
 
-from numba import cuda
+import numba_cuda as cuda
 from numba.core import config
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 from numba.tests.support import linux_only
 
 if not config.ENABLE_CUDASIM:

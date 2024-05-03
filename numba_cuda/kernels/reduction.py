@@ -10,7 +10,7 @@ _NUMWARPS = 4
 
 
 def _gpu_reduce_factory(fn, nbtype):
-    from numba import cuda
+    import numba_cuda as cuda
 
     reduce_op = cuda.jit(device=True)(fn)
     inner_sm_size = _WARPSIZE + 1   # plus one to avoid SM collision
@@ -206,7 +206,7 @@ class Reduce(object):
         :return: If ``res`` is specified, ``None`` is returned. Otherwise, the
                 result of the reduction is returned.
         """
-        from numba import cuda
+        import numba_cuda as cuda
 
         # ensure 1d array
         if arr.ndim != 1:

@@ -12,9 +12,9 @@ from numba.core import types, cgutils
 from numba.np import ufunc_db
 from numba.np.npyimpl import register_ufuncs
 from .cudadrv import nvvm
-from numba import cuda
-from numba.cuda import nvvmutils, stubs, errors
-from numba.cuda.types import dim3, CUDADispatcher
+import numba_cuda as cuda
+from numba_cuda import nvvmutils, stubs, errors
+from numba_cuda.types import dim3, CUDADispatcher
 
 registry = Registry()
 lower = registry.lower

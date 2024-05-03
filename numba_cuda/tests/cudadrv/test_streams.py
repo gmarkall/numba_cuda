@@ -2,8 +2,8 @@ import asyncio
 import functools
 import threading
 import numpy as np
-from numba import cuda
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 
 
 def with_asyncio_loop(f):

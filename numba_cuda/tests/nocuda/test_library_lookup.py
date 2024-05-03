@@ -5,14 +5,14 @@ import warnings
 
 from numba.core.config import IS_WIN32, IS_OSX
 from numba.core.errors import NumbaWarning
-from numba.cuda.cudadrv import nvvm
-from numba.cuda.testing import (
+from numba_cuda.cudadrv import nvvm
+from numba_cuda.testing import (
     unittest,
     skip_on_cudasim,
     SerialMixin,
     skip_unless_conda_cudatoolkit,
 )
-from numba.cuda.cuda_paths import (
+from numba_cuda.cuda_paths import (
     _get_libdevice_path_decision,
     _get_nvvm_path_decision,
     _get_cudalib_dir_path_decision,

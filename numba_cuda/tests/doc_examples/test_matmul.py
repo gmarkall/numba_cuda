@@ -7,7 +7,7 @@ Contents in this file are referenced from the sphinx-generated docs.
 "magictoken" is used for markers as beginning and ending of example text.
 """
 import unittest
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 from numba.tests.support import captured_stdout
 
 
@@ -32,7 +32,8 @@ class TestMatMul(CUDATestCase):
     def test_ex_matmul(self):
         """Test of matrix multiplication on various cases."""
         # magictoken.ex_import.begin
-        from numba import cuda, float32
+        import numba_cuda as cuda
+        from numba import float32
         import numpy as np
         import math
         # magictoken.ex_import.end

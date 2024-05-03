@@ -1,5 +1,5 @@
 from numba import types
-from numba.cuda.stubs import _vector_type_stubs
+from numba_cuda.stubs import _vector_type_stubs
 
 
 class SimulatedVectorType:

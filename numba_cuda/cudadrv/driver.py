@@ -35,7 +35,7 @@ from numba.core import utils, serialize, config
 from .error import CudaSupportError, CudaDriverError
 from .drvapi import API_PROTOTYPES
 from .drvapi import cu_occupancy_b2d_size, cu_stream_callback_pyobj, cu_uuid
-from numba.cuda.cudadrv import enums, drvapi, nvrtc, _extras
+from numba_cuda.cudadrv import enums, drvapi, nvrtc, _extras
 
 USE_NV_BINDING = config.CUDA_USE_NVIDIA_BINDING
 
@@ -824,7 +824,7 @@ class HostOnlyCUDAMemoryManager(BaseCUDAMemoryManager):
     ``memhostalloc`` and ``mempin`` methods.
 
     This class also implements ``reset`` and ``defer_cleanup`` (see
-    :class:`numba.cuda.BaseCUDAMemoryManager`) for its own internal state
+    :class:`numba_cuda.BaseCUDAMemoryManager`) for its own internal state
     management. If an EMM Plugin based on this class also implements these
     methods, then its implementations of these must also call the method from
     ``super()`` to give ``HostOnlyCUDAMemoryManager`` an opportunity to do the
@@ -1021,7 +1021,7 @@ class GetIpcHandleMixin:
         """Open an IPC memory handle by using ``cuMemGetAddressRange`` to
         determine the base pointer of the allocation. An IPC handle of type
         ``cu_ipc_mem_handle`` is constructed and initialized with
-        ``cuIpcGetMemHandle``. A :class:`numba.cuda.IpcHandle` is returned,
+        ``cuIpcGetMemHandle``. A :class:`numba_cuda.IpcHandle` is returned,
         populated with the underlying ``ipc_mem_handle``.
         """
         base, end = device_extents(memory)
@@ -1748,7 +1748,7 @@ class _StagedIpcImpl(object):
         self.source_info = source_info
 
     def open(self, context):
-        from numba import cuda
+        import numba_cuda as cuda
 
         srcdev = Device.from_identity(self.source_info)
         if USE_NV_BINDING:

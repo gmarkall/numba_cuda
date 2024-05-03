@@ -25,7 +25,7 @@ if not config.ENABLE_CUDASIM:
         typeof_impl,
         type_callable
     )
-    from numba.cuda.cudaimpl import lower
+    from numba_cuda.cudaimpl import lower
     from numba.core import cgutils
 
     @typeof_impl.register(TestStruct)

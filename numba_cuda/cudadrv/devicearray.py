@@ -12,16 +12,16 @@ from ctypes import c_void_p
 
 import numpy as np
 
-import numba
+import numba_cuda
 from numba import _devicearray
-from numba.cuda.cudadrv import devices
-from numba.cuda.cudadrv import driver as _driver
+from numba_cuda.cudadrv import devices
+from numba_cuda.cudadrv import driver as _driver
 from numba.core import types, config
 from numba.np.unsafe.ndarray import to_fixed_tuple
 from numba.np.numpy_support import numpy_version
 from numba.misc import dummyarray
 from numba.np import numpy_support
-from numba.cuda.api_util import prepare_shape_strides_dtype
+from numba_cuda.api_util import prepare_shape_strides_dtype
 from numba.core.errors import NumbaPerformanceWarning
 from warnings import warn
 
@@ -160,7 +160,7 @@ class DeviceNDArrayBase(_devicearray.DeviceArray):
         elif axes is not None and set(axes) != set(range(self.ndim)):
             raise ValueError("invalid axes list %r" % (axes,))
         else:
-            from numba.cuda.kernels.transpose import transpose
+            from numba_cuda.kernels.transpose import transpose
             return transpose(self)
 
     def _default_stream(self, stream):
@@ -509,7 +509,7 @@ def _assign_kernel(ndim):
     :param ndim: We need to have static array sizes for cuda.local.array, so
         bake in the number of dimensions into the kernel
     """
-    from numba import cuda  # circular!
+    import numba_cuda as cuda  # circular!
 
     if ndim == 0:
         # the (2, ndim) allocation below is not yet supported, so avoid it
@@ -860,7 +860,7 @@ def auto_device(obj, stream=0, copy=True, user_explicit=False):
     if _driver.is_device_memory(obj):
         return obj, False
     elif hasattr(obj, '__cuda_array_interface__'):
-        return numba.cuda.as_cuda_array(obj), False
+        return numba_cuda.as_cuda_array(obj), False
     else:
         if isinstance(obj, np.void):
             devobj = from_record_like(obj, stream=stream)

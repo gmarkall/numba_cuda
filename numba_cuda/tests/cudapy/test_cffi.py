@@ -1,7 +1,8 @@
 import numpy as np
 
-from numba import cuda, types
-from numba.cuda.testing import (skip_on_cudasim, test_data_dir, unittest,
+import numba_cuda as cuda
+from numba import types
+from numba_cuda.testing import (skip_on_cudasim, test_data_dir, unittest,
                                 CUDATestCase)
 from numba.tests.support import skip_unless_cffi
 

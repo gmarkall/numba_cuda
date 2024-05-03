@@ -3,8 +3,8 @@ import platform
 import shutil
 
 from numba.tests.support import SerialMixin
-from numba.cuda.cuda_paths import get_conda_ctk
-from numba.cuda.cudadrv import driver, devices, libs
+from numba_cuda.cuda_paths import get_conda_ctk
+from numba_cuda.cudadrv import driver, devices, libs
 from numba.core import config
 from numba.tests.support import TestCase
 from pathlib import Path
@@ -54,13 +54,13 @@ class ContextResettingTestCase(CUDATestCase):
 
     def tearDown(self):
         super().tearDown()
-        from numba.cuda.cudadrv.devices import reset
+        from numba_cuda.cudadrv.devices import reset
         reset()
 
 
 def ensure_supported_ccs_initialized():
-    from numba.cuda import is_available as cuda_is_available
-    from numba.cuda.cudadrv import nvvm
+    from numba_cuda import is_available as cuda_is_available
+    from numba_cuda.cudadrv import nvvm
 
     if cuda_is_available():
         # Ensure that cudart.so is loaded and the list of supported compute

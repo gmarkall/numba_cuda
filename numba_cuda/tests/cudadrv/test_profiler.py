@@ -1,7 +1,7 @@
 import unittest
-from numba.cuda.testing import ContextResettingTestCase
-from numba import cuda
-from numba.cuda.testing import skip_on_cudasim
+from numba_cuda.testing import ContextResettingTestCase
+import numba_cuda as cuda
+from numba_cuda.testing import skip_on_cudasim
 
 
 @skip_on_cudasim('CUDA Profiler unsupported in the simulator')

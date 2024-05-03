@@ -1,5 +1,5 @@
 """
-API that are reported to numba.cuda
+API that are reported to numba_cuda
 """
 
 
@@ -10,7 +10,7 @@ import numpy as np
 
 from .cudadrv import devicearray, devices, driver
 from numba.core import config
-from numba.cuda.api_util import prepare_shape_strides_dtype
+from numba_cuda.api_util import prepare_shape_strides_dtype
 
 # NDarray device helper
 
@@ -290,7 +290,7 @@ def _order_like_array(ary):
 
 def device_array_like(ary, stream=0):
     """
-    Call :func:`device_array() <numba.cuda.device_array>` with information from
+    Call :func:`device_array() <numba_cuda.device_array>` with information from
     the array.
     """
     strides = _contiguous_strides_like_array(ary)
@@ -301,7 +301,7 @@ def device_array_like(ary, stream=0):
 
 def mapped_array_like(ary, stream=0, portable=False, wc=False):
     """
-    Call :func:`mapped_array() <numba.cuda.mapped_array>` with the information
+    Call :func:`mapped_array() <numba_cuda.mapped_array>` with the information
     from the array.
     """
     strides = _contiguous_strides_like_array(ary)
@@ -312,7 +312,7 @@ def mapped_array_like(ary, stream=0, portable=False, wc=False):
 
 def pinned_array_like(ary):
     """
-    Call :func:`pinned_array() <numba.cuda.pinned_array>` with the information
+    Call :func:`pinned_array() <numba_cuda.pinned_array>` with the information
     from the array.
     """
     strides = _contiguous_strides_like_array(ary)

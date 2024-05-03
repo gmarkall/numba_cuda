@@ -62,10 +62,10 @@ class _DeviceContextManager(object):
     """
     Provides a context manager for executing in the context of the chosen
     device. The normal use of instances of this type is from
-    ``numba.cuda.gpus``. For example, to execute on device 2::
+    ``numba_cuda.gpus``. For example, to execute on device 2::
 
-       with numba.cuda.gpus[2]:
-           d_a = numba.cuda.to_device(a)
+       with numba_cuda.gpus[2]:
+           d_a = numba_cuda.to_device(a)
 
     to copy the array *a* onto device 2, referred to by *d_a*.
     """

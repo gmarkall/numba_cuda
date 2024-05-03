@@ -1,6 +1,6 @@
-from numba import cuda
+import numba_cuda as cuda
 from numba.core.errors import TypingError
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 import numpy as np
 import unittest
 
@@ -10,7 +10,7 @@ class TestSelfRecursion(CUDATestCase):
     def setUp(self):
         # Avoid importing this module at the top level, as it triggers
         # compilation and can therefore fail
-        from numba.cuda.tests.cudapy import recursion_usecases
+        from numba_cuda.tests.cudapy import recursion_usecases
         self.mod = recursion_usecases
         super().setUp()
 

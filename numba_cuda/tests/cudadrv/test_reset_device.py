@@ -1,7 +1,7 @@
 import threading
-from numba import cuda
-from numba.cuda.cudadrv.driver import driver
-from numba.cuda.testing import unittest, ContextResettingTestCase
+import numba_cuda as cuda
+from numba_cuda.cudadrv.driver import driver
+from numba_cuda.testing import unittest, ContextResettingTestCase
 from queue import Queue
 
 

@@ -1,6 +1,6 @@
-from numba import cuda
+import numba_cuda as cuda
 from numba.core.errors import TypingError
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 
 
 def noop(x):

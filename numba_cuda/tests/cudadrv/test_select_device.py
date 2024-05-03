@@ -5,8 +5,8 @@ import threading
 from queue import Queue
 
 import numpy as np
-from numba import cuda
-from numba.cuda.testing import unittest, ContextResettingTestCase
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, ContextResettingTestCase
 
 
 def newthread(exception_queue):

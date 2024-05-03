@@ -15,9 +15,9 @@ import sys
 import ctypes
 
 from numba.misc.findlib import find_lib
-from numba.cuda.cuda_paths import get_cuda_paths
-from numba.cuda.cudadrv.driver import locate_driver_and_loader, load_driver
-from numba.cuda.cudadrv.error import CudaSupportError
+from numba_cuda.cuda_paths import get_cuda_paths
+from numba_cuda.cudadrv.driver import locate_driver_and_loader, load_driver
+from numba_cuda.cudadrv.error import CudaSupportError
 
 
 if sys.platform == 'win32':

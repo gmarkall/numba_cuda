@@ -1,7 +1,7 @@
 from ctypes import byref, c_char, c_char_p, c_int, c_size_t, c_void_p, POINTER
 from enum import IntEnum
 from numba.core import config
-from numba.cuda.cudadrv.error import (NvrtcError, NvrtcCompilationError,
+from numba_cuda.cudadrv.error import (NvrtcError, NvrtcCompilationError,
                                       NvrtcSupportError)
 
 import functools
@@ -103,7 +103,7 @@ class NVRTC:
     def __new__(cls):
         with _nvrtc_lock:
             if cls.__INSTANCE is None:
-                from numba.cuda.cudadrv.libs import open_cudalib
+                from numba_cuda.cudadrv.libs import open_cudalib
                 cls.__INSTANCE = inst = object.__new__(cls)
                 try:
                     lib = open_cudalib('nvrtc')

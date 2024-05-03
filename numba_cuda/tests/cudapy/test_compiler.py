@@ -1,9 +1,10 @@
 from math import sqrt
-from numba import cuda, float32, int16, int32, int64, uint32, void
-from numba.cuda import (compile, compile_for_current_device, compile_ptx,
+import numba_cuda as cuda
+from numba import float32, int16, int32, int64, uint32, void
+from numba_cuda import (compile, compile_for_current_device, compile_ptx,
                         compile_ptx_for_current_device)
-from numba.cuda.cudadrv import runtime
-from numba.cuda.testing import skip_on_cudasim, unittest, CUDATestCase
+from numba_cuda.cudadrv import runtime
+from numba_cuda.testing import skip_on_cudasim, unittest, CUDATestCase
 
 
 # A test function at the module scope to ensure we get the name right for the C

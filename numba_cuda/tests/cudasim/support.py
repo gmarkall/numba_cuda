@@ -1,4 +1,4 @@
-from numba import cuda
+import numba_cuda as cuda
 
 
 @cuda.jit(device=True)

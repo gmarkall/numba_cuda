@@ -1,5 +1,5 @@
-from numba import cuda
-from numba.cuda.cudadrv.driver import driver
+import numba_cuda as cuda
+from numba_cuda.cudadrv.driver import driver
 import math
 from numba.np import numpy_support as nps
 

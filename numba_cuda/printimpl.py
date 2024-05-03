@@ -3,7 +3,7 @@ from llvmlite import ir
 from numba.core import types, cgutils
 from numba.core.errors import NumbaWarning
 from numba.core.imputils import Registry
-from numba.cuda import nvvmutils
+from numba_cuda import nvvmutils
 from warnings import warn
 
 registry = Registry()

@@ -1,3 +1,4 @@
+import numba_cuda as cuda
 import operator
 from numba.core import types
 from numba.core.typing.npydecl import (parse_dtype, parse_shape,
@@ -10,10 +11,9 @@ from numba.core.typing.npydecl import (parse_dtype, parse_shape,
 from numba.core.typing.templates import (AttributeTemplate, ConcreteTemplate,
                                          AbstractTemplate, CallableTemplate,
                                          signature, Registry)
-from numba.cuda.types import dim3
+from numba_cuda.types import dim3
 from numba.core.typeconv import Conversion
-from numba import cuda
-from numba.cuda.compiler import declare_device_function_template
+from numba_cuda.compiler import declare_device_function_template
 
 registry = Registry()
 register = registry.register

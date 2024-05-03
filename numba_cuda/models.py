@@ -5,7 +5,7 @@ from llvmlite import ir
 from numba.core.datamodel.registry import DataModelManager, register
 from numba.core.extending import models
 from numba.core import types
-from numba.cuda.types import Dim3, GridGroup, CUDADispatcher
+from numba_cuda.types import Dim3, GridGroup, CUDADispatcher
 
 
 cuda_data_manager = DataModelManager()

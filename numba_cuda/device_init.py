@@ -1,6 +1,6 @@
 # Re export
 import sys
-from numba.cuda import cg
+from numba_cuda import cg
 from .stubs import (threadIdx, blockIdx, blockDim, gridDim, laneid, warpsize,
                     syncwarp, shared, local, const, atomic,
                     shfl_sync_intrinsic, vote_sync_intrinsic, match_any_sync,
@@ -11,14 +11,14 @@ from .stubs import (threadIdx, blockIdx, blockDim, gridDim, laneid, warpsize,
 from .intrinsics import (grid, gridsize, syncthreads, syncthreads_and,
                          syncthreads_count, syncthreads_or)
 from .cudadrv.error import CudaSupportError
-from numba.cuda.cudadrv.driver import (BaseCUDAMemoryManager,
+from numba_cuda.cudadrv.driver import (BaseCUDAMemoryManager,
                                        HostOnlyCUDAMemoryManager,
                                        GetIpcHandleMixin, MemoryPointer,
                                        MappedMemory, PinnedMemory, MemoryInfo,
                                        IpcHandle, set_memory_manager)
-from numba.cuda.cudadrv.runtime import runtime
+from numba_cuda.cudadrv.runtime import runtime
 from .cudadrv import nvvm
-from numba.cuda import initialize
+from numba_cuda import initialize
 from .errors import KernelRuntimeError
 
 from .decorators import jit, declare_device

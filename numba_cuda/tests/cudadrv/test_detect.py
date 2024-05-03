@@ -2,8 +2,8 @@ import os
 import sys
 import subprocess
 import threading
-from numba import cuda
-from numba.cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
+import numba_cuda as cuda
+from numba_cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
                                 skip_under_cuda_memcheck)
 from numba.tests.support import captured_stdout
 
@@ -42,7 +42,7 @@ class TestCUDAFindLibs(CUDATestCase):
         env_copy = os.environ.copy()
         env_copy[envvar] = str(envvar_value)
         code = """if 1:
-            from numba import cuda
+            import numba_cuda as cuda
             @cuda.jit('(int64,)')
             def kernel(x):
                 pass

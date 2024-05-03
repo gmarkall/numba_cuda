@@ -11,8 +11,8 @@ from numba.core.errors import NumbaInvalidConfigWarning
 from numba.core.typed_passes import (IRLegalization, NativeLowering,
                                      AnnotateTypes)
 from warnings import warn
-from numba.cuda.api import get_current_device
-from numba.cuda.target import CUDACABICallConv
+from numba_cuda.api import get_current_device
+from numba_cuda.target import CUDACABICallConv
 
 
 def _nvvm_options_type(x):

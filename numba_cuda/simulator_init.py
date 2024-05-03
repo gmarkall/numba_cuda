@@ -1,5 +1,5 @@
 # We import * from simulator here because * is imported from simulator_init by
-# numba.cuda.__init__.
+# numba_cuda.__init__.
 from .simulator import *  # noqa: F403, F401
 
 

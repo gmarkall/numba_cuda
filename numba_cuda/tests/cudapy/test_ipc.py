@@ -5,9 +5,9 @@ import pickle
 
 import numpy as np
 
-from numba import cuda
-from numba.cuda.cudadrv import driver
-from numba.cuda.testing import (skip_on_arm, skip_on_cudasim,
+import numba_cuda as cuda
+from numba_cuda.cudadrv import driver
+from numba_cuda.testing import (skip_on_arm, skip_on_cudasim,
                                 skip_under_cuda_memcheck,
                                 ContextResettingTestCase, ForeignArray)
 from numba.tests.support import linux_only, windows_only

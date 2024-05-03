@@ -1,6 +1,6 @@
 import unittest
 
-from numba.cuda.testing import CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import CUDATestCase, skip_on_cudasim
 from numba.tests.support import captured_stdout
 
 
@@ -24,7 +24,7 @@ class TestReduction(CUDATestCase):
     def test_ex_reduction(self):
         # ex_reduction.import.begin
         import numpy as np
-        from numba import cuda
+        import numba_cuda as cuda
         from numba.types import int32
         # ex_reduction.import.end
 

@@ -2,8 +2,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from numba import config, cuda, int32
-from numba.cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
+import numba_cuda as cuda
+from numba import config, int32
+from numba_cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
                                 skip_unless_cc_60, skip_if_cudadevrt_missing,
                                 skip_if_mvc_enabled)
 

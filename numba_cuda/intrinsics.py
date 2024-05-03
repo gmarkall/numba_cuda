@@ -1,12 +1,13 @@
 from llvmlite import ir
 
-from numba import cuda, types
+import numba_cuda as cuda
+from numba import types
 from numba.core import cgutils
 from numba.core.errors import RequireLiteralValue
 from numba.core.typing import signature
 from numba.core.extending import overload_attribute
-from numba.cuda import nvvmutils
-from numba.cuda.extending import intrinsic
+from numba_cuda import nvvmutils
+from numba_cuda.extending import intrinsic
 
 
 #-------------------------------------------------------------------------------
@@ -167,7 +168,7 @@ def syncthreads_count(typingctx, predicate):
     '''
     syncthreads_count(predicate)
 
-    An extension to numba.cuda.syncthreads where the return value is a count
+    An extension to numba_cuda.syncthreads where the return value is a count
     of the threads where predicate is true.
     '''
     fname = 'llvm.nvvm.barrier0.popc'
@@ -179,7 +180,7 @@ def syncthreads_and(typingctx, predicate):
     '''
     syncthreads_and(predicate)
 
-    An extension to numba.cuda.syncthreads where 1 is returned if predicate is
+    An extension to numba_cuda.syncthreads where 1 is returned if predicate is
     true for all threads or 0 otherwise.
     '''
     fname = 'llvm.nvvm.barrier0.and'
@@ -191,7 +192,7 @@ def syncthreads_or(typingctx, predicate):
     '''
     syncthreads_or(predicate)
 
-    An extension to numba.cuda.syncthreads where 1 is returned if predicate is
+    An extension to numba_cuda.syncthreads where 1 is returned if predicate is
     true for any thread or 0 otherwise.
     '''
     fname = 'llvm.nvvm.barrier0.or'

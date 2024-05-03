@@ -1,7 +1,7 @@
 import multiprocessing as mp
 import traceback
-from numba.cuda.testing import unittest, CUDATestCase
-from numba.cuda.testing import (skip_on_cudasim, skip_under_cuda_memcheck,
+from numba_cuda.testing import unittest, CUDATestCase
+from numba_cuda.testing import (skip_on_cudasim, skip_under_cuda_memcheck,
                                 skip_if_mvc_libraries_unavailable)
 from numba.tests.support import linux_only
 
@@ -9,7 +9,7 @@ from numba.tests.support import linux_only
 def child_test():
     from numba import config, cuda
 
-    # Change the MVC config after importing numba.cuda
+    # Change the MVC config after importing numba_cuda
     config.CUDA_ENABLE_MINOR_VERSION_COMPATIBILITY = 1
 
     @cuda.jit

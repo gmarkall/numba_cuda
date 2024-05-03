@@ -2,7 +2,8 @@ import functools
 import numpy as np
 import unittest
 
-from numba import config, cuda, types
+import numba_cuda as cuda
+from numba import config, types
 from numba.tests.support import TestCase
 from numba.tests.test_ufuncs import BasicUFuncTest
 

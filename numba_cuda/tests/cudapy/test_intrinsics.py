@@ -2,11 +2,12 @@ import itertools
 import numpy as np
 import operator
 import re
-from numba import cuda, int64
-from numba.cuda import compile_ptx
+import numba_cuda as cuda
+from numba import int64
+from numba_cuda import compile_ptx
 from numba.core.errors import TypingError
 from numba.core.types import f2
-from numba.cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
+from numba_cuda.testing import (unittest, CUDATestCase, skip_on_cudasim,
                                 skip_unless_cc_53)
 
 

@@ -1,6 +1,6 @@
 from numba import float64, uint32
-from numba.cuda.compiler import compile_ptx
-from numba.cuda.testing import skip_on_cudasim, unittest
+from numba_cuda.compiler import compile_ptx
+from numba_cuda.testing import skip_on_cudasim, unittest
 
 
 @skip_on_cudasim('Compilation unsupported in the simulator')

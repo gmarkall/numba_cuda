@@ -1,4 +1,4 @@
-from numba.cuda import libdevice, libdevicefuncs
+from numba_cuda import libdevice, libdevicefuncs
 from numba.core.typing.templates import ConcreteTemplate, Registry
 
 registry = Registry()

@@ -1,7 +1,7 @@
 import re
 import numpy as np
-from numba import cuda
-from numba.cuda.testing import unittest, skip_on_cudasim, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, skip_on_cudasim, CUDATestCase
 from llvmlite import ir
 
 
@@ -9,8 +9,8 @@ from llvmlite import ir
 class TestConstStringCodegen(unittest.TestCase):
     def test_const_string(self):
         # These imports are incompatible with CUDASIM
-        from numba.cuda.descriptor import cuda_target
-        from numba.cuda.cudadrv.nvvm import compile_ir
+        from numba_cuda.descriptor import cuda_target
+        from numba_cuda.cudadrv.nvvm import compile_ir
 
         targetctx = cuda_target.target_context
         mod = targetctx.create_module("")

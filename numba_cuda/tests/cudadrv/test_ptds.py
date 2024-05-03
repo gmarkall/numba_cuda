@@ -1,14 +1,15 @@
 import multiprocessing as mp
 import logging
 import traceback
-from numba.cuda.testing import unittest, CUDATestCase
-from numba.cuda.testing import (skip_on_cudasim, skip_with_cuda_python,
+from numba_cuda.testing import unittest, CUDATestCase
+from numba_cuda.testing import (skip_on_cudasim, skip_with_cuda_python,
                                 skip_under_cuda_memcheck)
 from numba.tests.support import linux_only
 
 
 def child_test():
-    from numba import cuda, int32, void
+    import numba_cuda as cuda
+    from numba import int32, void
     from numba.core import config
     import io
     import numpy as np
@@ -23,7 +24,7 @@ def child_test():
     # used.
     logbuf = io.StringIO()
     handler = logging.StreamHandler(logbuf)
-    cudadrv_logger = logging.getLogger('numba.cuda.cudadrv.driver')
+    cudadrv_logger = logging.getLogger('numba_cuda.cudadrv.driver')
     cudadrv_logger.addHandler(handler)
     cudadrv_logger.setLevel(logging.DEBUG)
 

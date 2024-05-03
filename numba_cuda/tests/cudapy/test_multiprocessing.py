@@ -3,8 +3,8 @@ import multiprocessing as mp
 
 import numpy as np
 
-from numba import cuda
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 import unittest
 
 has_mp_get_context = hasattr(mp, 'get_context')
@@ -12,7 +12,7 @@ is_unix = os.name == 'posix'
 
 
 def fork_test(q):
-    from numba.cuda.cudadrv.error import CudaDriverError
+    from numba_cuda.cudadrv.error import CudaDriverError
     try:
         cuda.to_device(np.arange(1))
     except CudaDriverError as e:

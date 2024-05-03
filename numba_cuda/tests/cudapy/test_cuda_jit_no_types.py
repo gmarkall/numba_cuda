@@ -1,6 +1,6 @@
-from numba import cuda
+import numba_cuda as cuda
 import numpy as np
-from numba.cuda.testing import CUDATestCase
+from numba_cuda.testing import CUDATestCase
 from numba.tests.support import override_config
 import unittest
 

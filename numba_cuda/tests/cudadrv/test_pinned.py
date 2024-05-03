@@ -1,8 +1,8 @@
 import numpy as np
 import platform
 
-from numba import cuda
-from numba.cuda.testing import unittest, ContextResettingTestCase
+import numba_cuda as cuda
+from numba_cuda.testing import unittest, ContextResettingTestCase
 
 
 class TestPinned(ContextResettingTestCase):

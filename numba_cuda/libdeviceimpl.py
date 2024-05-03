@@ -1,7 +1,7 @@
 from llvmlite import ir
 from numba.core import cgutils, types
 from numba.core.imputils import Registry
-from numba.cuda import libdevice, libdevicefuncs
+from numba_cuda import libdevice, libdevicefuncs
 
 registry = Registry()
 lower = registry.lower

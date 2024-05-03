@@ -1,14 +1,14 @@
 import multiprocessing
 import os
 from numba.core import config
-from numba.cuda.cudadrv.runtime import runtime
-from numba.cuda.testing import unittest, SerialMixin, skip_on_cudasim
+from numba_cuda.cudadrv.runtime import runtime
+from numba_cuda.testing import unittest, SerialMixin, skip_on_cudasim
 from unittest.mock import patch
 
 
 def set_visible_devices_and_check(q):
     try:
-        from numba import cuda
+        import numba_cuda as cuda
         import os
 
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
@@ -54,7 +54,7 @@ class TestVisibleDevices(unittest.TestCase, SerialMixin):
 
         # Avoid importing cuda at the top level so that
         # set_visible_devices_and_check gets to import it first in its process
-        from numba import cuda
+        import numba_cuda as cuda
 
         if len(cuda.gpus.lst) in (0, 1):
             self.skipTest('This test requires multiple GPUs')

@@ -1,7 +1,8 @@
-from numba import cuda, int32, float64, void
+import numba_cuda as cuda
+from numba import int32, float64, void
 from numba.core.errors import TypingError
 from numba.core import types
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 
 import numpy as np
 from numba.np import numpy_support as nps

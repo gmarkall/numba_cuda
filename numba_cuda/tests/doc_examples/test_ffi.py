@@ -2,7 +2,7 @@
 # "magictoken" is used for markers as beginning and ending of example text.
 
 import unittest
-from numba.cuda.testing import (CUDATestCase, skip_on_cudasim)
+from numba_cuda.testing import (CUDATestCase, skip_on_cudasim)
 from numba.tests.support import skip_unless_cffi
 
 
@@ -11,7 +11,7 @@ from numba.tests.support import skip_unless_cffi
 class TestFFI(CUDATestCase):
     def test_ex_linking_cu(self):
         # magictoken.ex_linking_cu.begin
-        from numba import cuda
+        import numba_cuda as cuda
         import numpy as np
         import os
 
@@ -46,7 +46,7 @@ class TestFFI(CUDATestCase):
         # magictoken.ex_linking_cu.end
 
     def test_ex_from_buffer(self):
-        from numba import cuda
+        import numba_cuda as cuda
         import os
 
         basedir = os.path.dirname(os.path.abspath(__file__))

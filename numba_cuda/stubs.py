@@ -59,7 +59,7 @@ class threadIdx(Dim3):
     '''
     The thread indices in the current thread block. Each index is an integer
     spanning the range from 0 inclusive to the corresponding value of the
-    attribute in :attr:`numba.cuda.blockDim` exclusive.
+    attribute in :attr:`numba_cuda.blockDim` exclusive.
     '''
     _description_ = '<threadIdx.{x,y,z}>'
 
@@ -68,7 +68,7 @@ class blockIdx(Dim3):
     '''
     The block indices in the grid of thread blocks. Each index is an integer
     spanning the range from 0 inclusive to the corresponding value of the
-    attribute in :attr:`numba.cuda.gridDim` exclusive.
+    attribute in :attr:`numba_cuda.gridDim` exclusive.
     '''
     _description_ = '<blockIdx.{x,y,z}>'
 
@@ -101,7 +101,7 @@ class warpsize(Stub):
 class laneid(Stub):
     '''
     This thread's lane within a warp. Ranges from 0 to
-    :attr:`numba.cuda.warpsize` - 1.
+    :attr:`numba_cuda.warpsize` - 1.
     '''
     _description_ = '<laneid>'
 

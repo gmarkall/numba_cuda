@@ -6,9 +6,9 @@ import sys
 import unittest
 import warnings
 
-from numba import cuda
+import numba_cuda as cuda
 from numba.core.errors import NumbaWarning
-from numba.cuda.testing import (CUDATestCase, skip_on_cudasim,
+from numba_cuda.testing import (CUDATestCase, skip_on_cudasim,
                                 skip_unless_cc_60, skip_if_cudadevrt_missing,
                                 skip_if_mvc_enabled, test_data_dir)
 from numba.tests.support import SerialMixin
@@ -534,7 +534,7 @@ class TestCUDACodeLibrary(CUDATestCase):
     def test_cannot_serialize_unfinalized(self):
         # The CUDA codegen failes to import under the simulator, so we cannot
         # import it at the top level
-        from numba.cuda.codegen import CUDACodeLibrary
+        from numba_cuda.codegen import CUDACodeLibrary
 
         # Usually a CodeLibrary requires a real CodeGen, but since we don't
         # interact with it, anything will do

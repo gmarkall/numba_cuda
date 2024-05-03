@@ -1,7 +1,8 @@
 import numpy as np
 
-from numba import cuda, complex64, int32, float64
-from numba.cuda.testing import unittest, CUDATestCase
+import numba_cuda as cuda
+from numba import complex64, int32, float64
+from numba_cuda.testing import unittest, CUDATestCase
 from numba.core.config import ENABLE_CUDASIM
 
 CONST_EMPTY = np.array([])

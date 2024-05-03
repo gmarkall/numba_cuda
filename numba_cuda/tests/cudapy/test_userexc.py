@@ -1,5 +1,5 @@
-from numba.cuda.testing import unittest, CUDATestCase
-from numba import cuda
+from numba_cuda.testing import unittest, CUDATestCase
+import numba_cuda as cuda
 from numba.core import config
 
 

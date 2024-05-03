@@ -3,7 +3,7 @@ from llvmlite import ir
 from numba.core import config, serialize
 from numba.core.codegen import Codegen, CodeLibrary
 from .cudadrv import devices, driver, nvvm, runtime
-from numba.cuda.cudadrv.libs import get_cudalib
+from numba_cuda.cudadrv.libs import get_cudalib
 
 import os
 import subprocess
@@ -351,7 +351,7 @@ class CUDACodeLibrary(serialize.ReduceMixin, CodeLibrary):
 class JITCUDACodegen(Codegen):
     """
     This codegen implementation for CUDA only generates optimized LLVM IR.
-    Generation of PTX code is done separately (see numba.cuda.compiler).
+    Generation of PTX code is done separately (see numba_cuda.compiler).
     """
 
     _library_class = CUDACodeLibrary

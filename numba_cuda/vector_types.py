@@ -10,8 +10,8 @@ from numba.core.imputils import Registry as ImplRegistry
 from numba.core.typing.templates import ConcreteTemplate
 from numba.core.typing.templates import Registry as TypingRegistry
 from numba.core.typing.templates import signature
-from numba.cuda import stubs
-from numba.cuda.errors import CudaLoweringError
+from numba_cuda import stubs
+from numba_cuda.errors import CudaLoweringError
 
 typing_registry = TypingRegistry()
 impl_registry = ImplRegistry()

@@ -1,10 +1,11 @@
 import numpy as np
-from numba.cuda.testing import (skip_unless_cc_53,
+from numba_cuda.testing import (skip_unless_cc_53,
                                 unittest,
                                 CUDATestCase,
                                 skip_on_cudasim)
 from numba.np import numpy_support
-from numba import cuda, float32, float64, int32, vectorize, void, int64
+import numba_cuda as cuda
+from numba import float32, float64, int32, vectorize, void, int64
 import math
 
 

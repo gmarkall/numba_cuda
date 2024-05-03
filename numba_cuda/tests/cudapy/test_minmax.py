@@ -1,7 +1,8 @@
 import numpy as np
 
-from numba import cuda, float64
-from numba.cuda.testing import unittest, CUDATestCase, skip_on_cudasim
+import numba_cuda as cuda
+from numba import float64
+from numba_cuda.testing import unittest, CUDATestCase, skip_on_cudasim
 
 
 def builtin_max(A, B, C):

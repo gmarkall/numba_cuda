@@ -1,4 +1,4 @@
-from numba.cuda.cudadrv import devices, driver
+from numba_cuda.cudadrv import devices, driver
 from numba.core.registry import cpu_target
 
 

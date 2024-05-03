@@ -1,7 +1,7 @@
 from ctypes import (c_byte, c_char_p, c_float, c_int, c_size_t, c_uint,
                     c_uint8, c_void_p, py_object, CFUNCTYPE, POINTER)
 
-from numba.cuda.cudadrv import _extras
+from numba_cuda.cudadrv import _extras
 
 cu_device = c_int
 cu_device_attribute = c_int     # enum

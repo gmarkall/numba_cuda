@@ -1,8 +1,8 @@
 from llvmlite import ir
 
-from numba.cuda.cudadrv import nvvm
-from numba.cuda.testing import unittest, ContextResettingTestCase
-from numba.cuda.testing import skip_on_cudasim
+from numba_cuda.cudadrv import nvvm
+from numba_cuda.testing import unittest, ContextResettingTestCase
+from numba_cuda.testing import skip_on_cudasim
 
 
 @skip_on_cudasim('Inline PTX cannot be used in the simulator')

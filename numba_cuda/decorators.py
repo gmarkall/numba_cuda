@@ -1,9 +1,9 @@
 from warnings import warn
 from numba.core import types, config, sigutils
 from numba.core.errors import DeprecationError, NumbaInvalidConfigWarning
-from numba.cuda.compiler import declare_device_function
-from numba.cuda.dispatcher import CUDADispatcher
-from numba.cuda.simulator.kernel import FakeCUDAKernel
+from numba_cuda.compiler import declare_device_function
+from numba_cuda.dispatcher import CUDADispatcher
+from numba_cuda.simulator.kernel import FakeCUDAKernel
 
 
 _msg_deprecated_signature_arg = ("Deprecated keyword argument `{0}`. "
@@ -18,11 +18,11 @@ def jit(func_or_sig=None, device=False, inline=False, link=[], debug=None,
 
     :param func_or_sig: A function to JIT compile, or *signatures* of a
        function to compile. If a function is supplied, then a
-       :class:`Dispatcher <numba.cuda.dispatcher.CUDADispatcher>` is returned.
+       :class:`Dispatcher <numba_cuda.dispatcher.CUDADispatcher>` is returned.
        Otherwise, ``func_or_sig`` may be a signature or a list of signatures,
        and a function is returned. The returned function accepts another
        function, which it will compile and then return a :class:`Dispatcher
-       <numba.cuda.dispatcher.CUDADispatcher>`. See :ref:`jit-decorator` for
+       <numba_cuda.dispatcher.CUDADispatcher>`. See :ref:`jit-decorator` for
        more information about passing signatures.
 
        .. note:: A kernel cannot have any return value.

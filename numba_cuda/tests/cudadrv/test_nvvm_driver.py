@@ -1,10 +1,10 @@
 import warnings
 
 from llvmlite import ir
-from numba.cuda.cudadrv import nvvm, runtime
-from numba.cuda.testing import unittest
-from numba.cuda.cudadrv.nvvm import LibDevice, NvvmError, NVVM
-from numba.cuda.testing import skip_on_cudasim
+from numba_cuda.cudadrv import nvvm, runtime
+from numba_cuda.testing import unittest
+from numba_cuda.cudadrv.nvvm import LibDevice, NvvmError, NVVM
+from numba_cuda.testing import skip_on_cudasim
 
 
 @skip_on_cudasim('NVVM Driver unsupported in the simulator')

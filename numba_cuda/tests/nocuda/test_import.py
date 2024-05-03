@@ -37,7 +37,7 @@ class TestImport(unittest.TestCase):
             'numba.experimental.jitclass.base',
         )
 
-        code = "import sys; from numba import cuda; print(list(sys.modules))"
+        code = "import sys; import numba_cuda as cuda; print(list(sys.modules))"
 
         out, _ = run_in_subprocess(code)
         modlist = set(eval(out.strip()))

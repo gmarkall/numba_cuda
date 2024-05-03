@@ -1,8 +1,8 @@
 import numpy as np
-from numba import cuda
-from numba.cuda.kernels.transpose import transpose
-from numba.cuda.testing import unittest
-from numba.cuda.testing import skip_on_cudasim, CUDATestCase
+import numba_cuda as cuda
+from numba_cuda.kernels.transpose import transpose
+from numba_cuda.testing import unittest
+from numba_cuda.testing import skip_on_cudasim, CUDATestCase
 
 
 recordwith2darray = np.dtype([('i', np.int32),

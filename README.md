@@ -17,7 +17,7 @@ pip install -e .
 The `_extras` library needs copying to the source tree for an editable install:
 
 ```
-cp build/cp*/_extras.cpython-*.so numba_cuda/numba/cuda/cudadrv/
+cp build/cp*/_extras.cpython-*.so numba_cuda/cudadrv/
 ```
 
 Run the test:
