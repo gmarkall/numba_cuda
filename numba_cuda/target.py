@@ -3,6 +3,8 @@ from functools import cached_property
 import llvmlite.binding as ll
 from llvmlite import ir
 
+import numba
+import numba_cuda
 from numba.core import (cgutils, config, debuginfo, itanium_mangler, types,
                         typing, utils)
 from numba.core.dispatcher import Dispatcher
@@ -31,6 +33,12 @@ class CUDATypingContext(typing.BaseContext):
         self.install_registry(libdevicedecl.registry)
         self.install_registry(enumdecl.registry)
         self.install_registry(vector_types.typing_registry)
+
+    def resolve_getattr(self, typ, attr):
+        if isinstance(typ, types.Module) and typ.pymod == numba.cuda:
+            typ = types.Module(numba_cuda)
+
+        return super().resolve_getattr(typ, attr)
 
     def resolve_value_type(self, val):
         # treat other dispatcher object as another device function
