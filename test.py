@@ -1,10 +1,5 @@
-import numba_cuda
 import os
 import sys
-
-# Shadow the numba.cuda module
-
-numba_cuda.install()
 
 from numba import cuda  # noqa: E402
 
