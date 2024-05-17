@@ -1,7 +1,8 @@
 import os
 import sys
 
-from numba import cuda  # noqa: E402
+from numba import cuda
+import numba_cuda
 
 # Run the test suite
 
@@ -12,7 +13,7 @@ if __name__ == '__main__':
     # checking that all numba.cuda imports came from the numba_cuda package's
     # directory tree
 
-    numba_cuda_path = os.path.dirname(__file__)
+    numba_cuda_path = os.path.dirname(numba_cuda.__file__)
 
     unexpected_path = False
     for name, module in sys.modules.items():
